@@ -1,20 +1,10 @@
 import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  standalone: true,
-  imports: [FormsModule],
   templateUrl: './app.html',
-  styleUrl: './app.css'
+  styleUrl: './app.css',
+  imports: [RouterOutlet]
 })
-export class App {
-  emailDigitado = "";
-  senhaDigitada = "";
-
-  fazerLogin() {
-    console.log("Email: " + this.emailDigitado);
-    console.log("Senha: " + this.senhaDigitada);
-    alert("Tentando fazer login com email: " + this.emailDigitado + " e senha: " + this.senhaDigitada);
-  }
-}
+export class App {}
