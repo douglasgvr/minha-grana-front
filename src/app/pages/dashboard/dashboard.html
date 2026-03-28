@@ -1,0 +1,17 @@
+<div class="container-dashboard">
+  <h1>Painel de Controle</h1>
+  <p>Bem-vindo ao minha grana! Em breve seu saldo aparecerá aqui.</p>
+
+  <div class="card card-receita">
+    <h3>Receitas</h3>
+    <p>R$ {{ resumo.totalReceitas | currency: 'BRL' }}</p>
+  </div>
+  <div class="card card-despesa">
+    <h3>Despesas</h3>
+    <p>R$ {{ resumo.totalDespesas | currency: 'BRL' }}</p>
+  </div>
+  <div class="card card-saldo">
+    <h3>Saldo</h3>
+    <p>R$ {{ resumo.saldoAtual | currency: 'BRL' }}</p>
+  </div>
+</div>

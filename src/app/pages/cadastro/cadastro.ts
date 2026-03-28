@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cadastro',
@@ -14,7 +15,7 @@ export class Cadastro {
   emailDigitado = "";
   senhaDigitada = "";
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private router: Router) {}
 
   criarConta() {
     const novoUsuario = {
@@ -27,7 +28,10 @@ export class Cadastro {
       .subscribe({
         next: (resposta) => {
           console.log('Usuário criado com sucesso:', resposta);
-          alert('Usuário criado com sucesso!');
+
+          localStorage.setItem('usuarioLogado', JSON.stringify(resposta));
+          
+          this.router.navigate(["/dashboard"]);
         }
         ,
         error: (erro) => {
