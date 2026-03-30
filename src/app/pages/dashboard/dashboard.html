@@ -15,3 +15,36 @@
     <p>{{ resumo.saldoAtual | currency: 'BRL' }}</p>
   </div>
 </div>
+
+<div class="actions-container">
+  <button class="btn btn-primary" (click)="abrirModal()">+ Nova Transação</button>
+</div>
+
+<div class="modal-overlay" *ngIf="mostrarModal">
+  <div class="modal-box">
+    <h2>Nova Transação 💸</h2>
+
+    <div class="form-group">
+      <label>Descrição</label>
+      <input type="text" placeholder="Ex: Mercado da semana" />
+    </div>
+
+    <div class="form-group">
+      <label>Valor (R$)</label>
+      <input type="number" placeholder="0.00" />
+    </div>
+
+    <div class="form-group">
+      <label>Tipo</label>
+      <select>
+        <option value="RECEITA">Receita (Entrada)</option>
+        <option value="DESPESA">Despesa (Saída)</option>
+      </select>
+    </div>
+
+    <div class="modal-buttons">
+      <button class="btn-cancel" (click)="fecharModal()">Cancelar</button>
+      <button class="btn-success">Salvar</button>
+    </div>
+  </div>
+</div>

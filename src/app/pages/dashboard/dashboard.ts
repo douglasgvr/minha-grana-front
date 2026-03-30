@@ -1,15 +1,24 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { CurrencyPipe } from '@angular/common';
+import { CommonModule, CurrencyPipe } from '@angular/common';
 
 @Component({
   selector: 'app-dashboard',
-  imports: [CurrencyPipe],
+  imports: [CurrencyPipe, CommonModule],
   templateUrl: './dashboard.html',
   styleUrl: './dashboard.css',
 })
 export class Dashboard implements OnInit {
   contaCasalId: string = '';
+
+  // Modal
+  mostrarModal: boolean = false;
+  abrirModal() {
+    this.mostrarModal = true;
+  }
+  fecharModal() {
+    this.mostrarModal = false;
+  }
 
   resumo = {
     totalReceitas: 0,
