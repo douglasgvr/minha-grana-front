@@ -4,14 +4,14 @@
 
   <div class="card card-receita">
     <h3>Receitas</h3>
-    <p>R$ {{ resumo.totalReceitas | currency: 'BRL' }}</p>
+    <p>{{ resumo.totalReceitas | currency: 'BRL' }}</p>
   </div>
   <div class="card card-despesa">
     <h3>Despesas</h3>
-    <p>R$ {{ resumo.totalDespesas | currency: 'BRL' }}</p>
+    <p>{{ resumo.totalDespesas | currency: 'BRL' }}</p>
   </div>
   <div class="card card-saldo">
     <h3>Saldo</h3>
-    <p>R$ {{ resumo.saldoAtual | currency: 'BRL' }}</p>
+    <p>{{ resumo.saldoAtual | currency: 'BRL' }}</p>
   </div>
 </div>
