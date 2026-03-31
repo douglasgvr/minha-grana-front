@@ -11,33 +11,34 @@ import { Router } from '@angular/router';
   styleUrl: './cadastro.css',
 })
 export class Cadastro {
-  nomeDigitado = "";
-  emailDigitado = "";
-  senhaDigitada = "";
+  nomeDigitado = '';
+  emailDigitado = '';
+  senhaDigitada = '';
 
-  constructor(private http: HttpClient, private router: Router) {}
+  constructor(
+    private http: HttpClient,
+    private router: Router,
+  ) {}
 
   criarConta() {
     const novoUsuario = {
       nome: this.nomeDigitado,
       email: this.emailDigitado,
-      senha: this.senhaDigitada
+      senha: this.senhaDigitada,
     };
 
-    this.http.post('http://localhost:8080/api/usuarios', novoUsuario)
-      .subscribe({
-        next: (resposta) => {
-          console.log('Usuário criado com sucesso:', resposta);
+    this.http.post('http://localhost:8080/api/usuarios', novoUsuario).subscribe({
+      next: (resposta) => {
+        console.log('Usuário criado com sucesso:', resposta);
 
-          localStorage.setItem('usuarioLogado', JSON.stringify(resposta));
-          
-          this.router.navigate(["/dashboard"]);
-        }
-        ,
-        error: (erro) => {
-          console.error('Erro ao criar usuário:', erro);
-          alert('Erro ao criar usuário. Por favor, tente novamente.');
-        }
-      });
+        localStorage.setItem('usuarioLogado', JSON.stringify(resposta));
+
+        this.router.navigate(['/setup']);
+      },
+      error: (erro) => {
+        console.error('Erro ao criar usuário:', erro);
+        alert('Erro ao criar usuário. Por favor, tente novamente.');
+      },
+    });
   }
 }
