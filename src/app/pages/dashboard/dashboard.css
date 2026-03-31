@@ -7,46 +7,85 @@
 .cards-container {
   display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: 24px;
   margin-top: 30px;
+  flex-wrap: wrap;
 }
 
 .card {
-  padding: 20px;
-  border-radius: 12px;
-  min-width: 160px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  background-color: #ffffff;
+  padding: 24px;
+  border-radius: 16px;
+  flex: 1;
+  min-width: 260px;
+  max-width: 350px;
+  box-shadow:
+    0 10px 15px -3px rgba(0, 0, 0, 0.05),
+    0 4px 6px -2px rgba(0, 0, 0, 0.025);
+  border: 1px solid #f3f4f6;
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
 }
 
-.card h3 {
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow:
+    0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.card-header h3 {
   margin: 0;
+  font-size: 14px;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.card-header i {
+  font-size: 28px;
+}
+
+.icon-receita {
+  color: #10b981;
+}
+
+.icon-despesa {
+  color: #ef4444;
+}
+
+.icon-saldo {
+  color: #3b82f6;
+}
+
+.card-header .icon {
   font-size: 16px;
 }
 
 .card h2 {
-  margin: 10px 0 0 0;
-  font-size: 24px;
+  margin: 0;
+  font-size: 32px;
+  font-weight: 800;
 }
 
-.card-receita {
-  background-color: #d1fae5;
-}
-.card-receita h3 {
-  color: #065f46;
+.card-receita h2 {
+  color: #10b981;
 }
 
-.card-despesa {
-  background-color: #fee2e2;
-}
-.card-despesa h3 {
-  color: #991b1b;
+.card-despesa h2 {
+  color: #ef4444;
 }
 
-.card-saldo {
-  background-color: #bfdbfe;
-}
-.card-saldo h3 {
-  color: #1e3a8a;
+.card-saldo h2 {
+  color: #1f2937;
 }
 
 /* Modal Styles */

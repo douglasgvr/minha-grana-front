@@ -1,18 +1,26 @@
-<div class="container-dashboard">
-  <h1>Painel de Controle</h1>
-  <p>Bem-vindo ao minha grana! Em breve seu saldo aparecerá aqui.</p>
-
+<div class="cards-container">
   <div class="card card-receita">
-    <h3>Receitas</h3>
-    <p>{{ resumo.totalReceitas | currency: 'BRL' }}</p>
+    <div class="card-header">
+      <h3>Receitas</h3>
+      <i class="ph ph-trend-up icon-receita"></i>
+    </div>
+    <h2>{{ resumo.totalReceitas | currency: 'BRL' }}</h2>
   </div>
+
   <div class="card card-despesa">
-    <h3>Despesas</h3>
-    <p>{{ resumo.totalDespesas | currency: 'BRL' }}</p>
+    <div class="card-header">
+      <h3>Despesas</h3>
+      <i class="ph ph-trend-down icon-despesa"></i>
+    </div>
+    <h2>{{ resumo.totalDespesas | currency: 'BRL' }}</h2>
   </div>
+
   <div class="card card-saldo">
-    <h3>Saldo</h3>
-    <p>{{ resumo.saldoAtual | currency: 'BRL' }}</p>
+    <div class="card-header">
+      <h3>Saldo Atual</h3>
+      <i class="ph ph-wallet icon-saldo"></i>
+    </div>
+    <h2>{{ resumo.saldoAtual | currency: 'BRL' }}</h2>
   </div>
 </div>
 
