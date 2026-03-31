@@ -26,17 +26,21 @@
 
     <div class="form-group">
       <label>Descrição</label>
-      <input type="text" placeholder="Ex: Mercado da semana" />
+      <input
+        type="text"
+        placeholder="Ex: Mercado da semana"
+        [(ngModel)]="novaTransacao.descricao"
+      />
     </div>
 
     <div class="form-group">
       <label>Valor (R$)</label>
-      <input type="number" placeholder="0.00" />
+      <input type="number" placeholder="0.00" [(ngModel)]="novaTransacao.valor" />
     </div>
 
     <div class="form-group">
       <label>Tipo</label>
-      <select>
+      <select [(ngModel)]="novaTransacao.tipo">
         <option value="RECEITA">Receita (Entrada)</option>
         <option value="DESPESA">Despesa (Saída)</option>
       </select>
@@ -44,7 +48,7 @@
 
     <div class="modal-buttons">
       <button class="btn-cancel" (click)="fecharModal()">Cancelar</button>
-      <button class="btn-success">Salvar</button>
+      <button class="btn-success" (click)="salvarTransacao()">Salvar</button>
     </div>
   </div>
 </div>
